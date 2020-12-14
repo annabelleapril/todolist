@@ -44,13 +44,22 @@ form button{
     
 }
 
-.list-button{
-    color: #d88771;
-    background: white;
+.trash, .completed{
+    padding: 0.2rem;
+    font-size: 1rem;
+    border: none;
+    background:transparent;
+}
+
+.trash, .completed{
+    color: #da3a0e;
+    background:transparent;
     cursor: pointer;
     transition: all 0.3s ease;
     
 }
+
+
 
 form button:hover{
     background: #d88771;
