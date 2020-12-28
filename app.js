@@ -7,7 +7,7 @@ const trashButton = document.querySelector('.trash');
 
 //Event Listeners
 todoButton.addEventListener('click', addTodo);
-trash.addEventListener('click', removeItem);
+todoList.addEventListener('click', seriousButts);
 
 
 
@@ -27,14 +27,28 @@ function addTodo(event){
     //Check mark button
     const completedButton = document.createElement('button');
     completedButton.innerHTML = '<i class="fas fa-check"></i> ';
-    completedButton.classList.add('completed');
+    completedButton.classList.add('check');
     newTodo.appendChild(completedButton);
     //Trash button
     const trashButton = document.createElement('button');
     trashButton.innerHTML = '<i class="fa fa-trash" aria-hidden="true"></i> ';
     trashButton.classList.add('trash');
     newTodo.appendChild(trashButton);
+    todoInput.value="";
+    // trashButton.addEventListener('click', seriousButts)
 };
     //Remove Item
-
+ function seriousButts(e) {
+     if(e.target.classList.contains("trash")){
+    //Animation
+    e.target.parentElement.parentElement.classList.add("fall");
+    e.target.parentElement.parentElement.addEventListener('transitionend', function(){
+        e.target.parentElement.parentElement.remove();
+        
+    });
     
+}
+    
+    if(e.target.classList.contains("check")){
+        e.target.parentElement.parentElement.classList.toggle("completed");}
+        };

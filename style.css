@@ -2,6 +2,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    border: none;
 }
 
 body{
@@ -27,6 +28,7 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.5s ease;
 }
 
 form input, form button{
@@ -34,6 +36,7 @@ form input, form button{
     font-size: 2rem;
     border: none;
     background: white;
+    outline: none;
 }
 
 form button{
@@ -44,14 +47,15 @@ form button{
     
 }
 
-.trash, .completed{
+.trash, .check{
     padding: 0.2rem;
     font-size: 1rem;
     border: none;
     background:transparent;
+    outline:none;
 }
 
-.trash, .completed{
+.trash, .check{
     color: #da3a0e;
     background:transparent;
     cursor: pointer;
@@ -65,4 +69,17 @@ form button:hover{
     background: #d88771;
     color:white;
 
+}
+.fa-trash, .fa-check{
+    pointer-events: none;
+}
+
+.completed{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fall{
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
 }
