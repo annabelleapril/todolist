@@ -34,7 +34,7 @@ form input, form button{
 }
 
 form button{
-    color: #d88771;
+    color: #ff6f47;
     background: white;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -42,7 +42,7 @@ form button{
 }
 
 form button:hover{
-    background: #d88771;
+    background: #ff6f47;
     color:white;
 
 }
@@ -66,6 +66,7 @@ form button:hover{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all 0.5s ease;
 }
 
 .todo li {
@@ -94,7 +95,7 @@ form button:hover{
     pointer-events: none;
 }
 
-/* .completed{
+.completed{
     text-decoration: line-through;
     opacity: 0.5;
 }
@@ -116,6 +117,7 @@ select{
     margin: 1rem;
     position:relative;
     overflow:hidden;
+    
 }
 
 select{
@@ -124,6 +126,8 @@ select{
     width: 10rem;
     cursor:pointer;
     padding: 1rem;
+    color:black;
+    font-size: 1rem;
 }
 
 .select::after{
@@ -134,4 +138,4 @@ select{
     right:0;
     padding:1rem;
     pointer-events:none;
-} */
+}

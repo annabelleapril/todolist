@@ -4,12 +4,12 @@ const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
 const completedButton = document.querySelector('.completed');
 const trashButton = document.querySelector('.trash');
-const filterTodos = document.querySelector('.filter-todo');
+const filterOption = document.querySelector('.filter-todo');
 
 //Event Listeners
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteCheck);
-filterTodos.addEventListener('click', updateList);
+filterOption.addEventListener('click', filterTodo);
 
 
 //Functions
@@ -42,28 +42,30 @@ function addTodo(event){
 
     //Remove Item
  function deleteCheck(e) {
-     const item = e.target;
-     if(item.classList.contains('trash-btn')){
+     const item = e.target
+     //Animation
+     if(item.classList[0] === 'trash-btn'){
         const todo = item.parentElement;
-        todo.remove();
-        
-    };};
-    
-    
+        todo.classList.add('fall')
+        todo.addEventListener('transitionend', function(e){
+            todo.remove();
+        })
+    };
 
-/*     
-    if(e.target.classList.contains("check")){
-        e.target.parentElement.parentElement.classList.toggle("completed");}
+    if(item.classList[0] === 'complete-btn'){
+        const todo = item.parentElement;
+        todo.classList.toggle("completed");
         };
 
-        function updateList(e){
+};
+    
+        function filterTodo(e){
            const todos = todoList.childNodes;
            todos.forEach(function(todo){
-               switch(e.target.value){
+               switch (e.target.value){
                    case "all":
                     todo.style.display = "flex";
-                   break;
-
+                   break; 
                    case "completed":
                    if(todo.classList.contains("completed")){
                        todo.style.display = "flex";
@@ -74,4 +76,4 @@ function addTodo(event){
                }
            });
         }
- */
+
